@@ -1,16 +1,24 @@
-import { ApolloServer } from "@saeris/apollo-server-vercel";
+import { ApolloServer } from '@saeris/apollo-server-vercel';
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = `
   type Query {
     hello: String
+  },
+  type Mutation {
+    upload: String
   }
 `;
 
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
-    hello: () => "Hello momen!"
+    hello: () => 'Hello momen!'
+  },
+  Mutation: {
+    upload: () => {
+      return 'Ok';
+    }
   }
 };
 
